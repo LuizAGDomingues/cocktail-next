@@ -9,8 +9,8 @@ export default function Home() {
         <h1 className="text-7xl">MIXOLOGYMATE</h1>
         <span className="text-2xl">Your perfect partner to explore the world of <br/>drinks!</span>
       </div>
-      <div className="flex items-center">
-        <Link href='/initial' className="max-w-fit rounded-full mt-16 py-4 px-12 text-white text-center text-xl bg-gradient-to-r from-[#5F4B43] via-[#675045] to-[#705548] hover:from-[#5F4B43] hover:to-[#493931] transition-colors uppercase relative mx-auto">Explore Now</Link>
+      <div className="flex items-center justify-center w-full">
+        <Link href='/initial' className=" rounded-full mt-16 py-4 px-12 text-white text-center text-xl bg-gradient-to-r from-[#5F4B43] via-[#675045] to-[#705548] hover:from-[#5F4B43] hover:to-[#493931] transition-colors uppercase relative mx-auto">Explore Now</Link>href={'/initial'}
       </div>
     </div>
   )
