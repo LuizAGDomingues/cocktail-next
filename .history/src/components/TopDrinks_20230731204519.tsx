@@ -27,7 +27,7 @@ function TopDrinks() {
             <InitialDrinkCard 
               key={drink.name} 
               slide='keen-slider__slide' 
-              drinkId={drink.drinkId}
+              
               name={drink.name} 
               imageURL={drink.imageURL} 
               description={drink.description + drink.history}

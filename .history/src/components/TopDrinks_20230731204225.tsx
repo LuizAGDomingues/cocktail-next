@@ -22,12 +22,11 @@ function TopDrinks() {
     <div>
       <h2 className='text-white text-2xl'>TOP RATED DRINKS</h2>
       <div ref={ref} className='keen-slider mt-12'>
-        {TopRatedDrinks.map((drink: topDrinksProps) => {
+        {TopRatedDrinks.map((drink) => {
           return (
             <InitialDrinkCard 
               key={drink.name} 
               slide='keen-slider__slide' 
-              drinkId={drink.drinkId}
               name={drink.name} 
               imageURL={drink.imageURL} 
               description={drink.description + drink.history}

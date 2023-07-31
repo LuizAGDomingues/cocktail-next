@@ -2,37 +2,37 @@
 
 import "keen-slider/keen-slider.min.css"
 import { useKeenSlider } from "keen-slider/react"
-import InitialDrinkCard from './InitialDrinkCard'
+import DrinkCard from './InitialDrinkCard'
 import Link from "next/link"
 
 const mock = [
   {
-    id: "1",
+    id: 1,
     name: "Margarita",
     imageURL: "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
   },
   {
-    id: "2",
+    id: 2,
     name: "Margarita",
     imageURL: "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
   },
   {
-    id: "3",
+    id: 3,
     name: "Margarita",
     imageURL: "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
   },
   {
-    id: "4",
+    id: 4,
     name: "Margarita",
     imageURL: "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
   },
   {
-    id: "5",
+    id: 5,
     name: "Margarita",
     imageURL: "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
   },
   {
-    id: "5",
+    id: 5,
     name: "Margarita",
     imageURL: "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
   },
@@ -52,7 +52,9 @@ function Favorites() {
       <div ref={ref} className='keen-slider mt-12'>
         {mock.map((drink) => {
           return (
-            <InitialDrinkCard key={drink.id} slide='keen-slider__slide' name={drink.name} imageURL={drink.imageURL} drinkId={drink.id} />
+            <Link href={`/drink/${drink.id}`} key={drink.id}>
+              <DrinkCard slide='keen-slider__slide' name={drink.name} imageURL={drink.imageURL} drinkId={""} />
+            </Link>
           )
         })}
       </div>

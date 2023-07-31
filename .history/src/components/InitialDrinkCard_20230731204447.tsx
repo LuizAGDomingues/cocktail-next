@@ -4,7 +4,7 @@ import React from 'react'
 
 interface InitialDrinkCardProps {
   slide: string
-  drinkId: string
+  drinkId?: string
   name: string
   imageURL: string
   description?: string

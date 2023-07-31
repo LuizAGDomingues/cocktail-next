@@ -1,12 +1,6 @@
-export interface topDrinksProps {
-  drinkId: string
-  name: string
-  description: string
-  history: string
-  imageURL: string
-}
+  
 
-export const topDrinks: topDrinksProps[] = [
+export const drinks = [
   {
     "drinkId": "11007",
     "name": "Margarita",

@@ -6,7 +6,7 @@ export interface topDrinksProps {
   imageURL: string
 }
 
-export const topDrinks: topDrinksProps[] = [
+export const topDrinks: topDrinksProps = [
   {
     "drinkId": "11007",
     "name": "Margarita",

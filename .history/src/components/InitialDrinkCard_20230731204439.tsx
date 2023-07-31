@@ -4,7 +4,7 @@ import React from 'react'
 
 interface InitialDrinkCardProps {
   slide: string
-  drinkId: string
+  drinkId?: string
   name: string
   imageURL: string
   description?: string
@@ -13,7 +13,7 @@ interface InitialDrinkCardProps {
 function InitialDrinkCard({ slide, drinkId, name, imageURL, description }: InitialDrinkCardProps) {
   return (
     <div className={slide}>
-      <Link href={`/drink/${drinkId}`} >
+      <Link href={``} >
         <Image src={imageURL} alt='Drink image' width={348} height={233} className='rounded-md'/>
       </Link>
       <span className='text-white text-xl underline'>{name}</span>

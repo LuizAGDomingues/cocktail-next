@@ -52,7 +52,7 @@ function Favorites() {
       <div ref={ref} className='keen-slider mt-12'>
         {mock.map((drink) => {
           return (
-            <InitialDrinkCard key={drink.id} slide='keen-slider__slide' name={drink.name} imageURL={drink.imageURL} drinkId={drink.id} />
+          <InitialDrinkCard key={drink.id} slide='keen-slider__slide' name={drink.name} imageURL={drink.imageURL} drinkId={drink.id} />
           )
         })}
       </div>
