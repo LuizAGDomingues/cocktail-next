@@ -47,6 +47,6 @@ export const topDrinks: topDrinksProps[] = [
     "name": "Piña Colada",
     "description": "The Piña Colada is a creamy and sweet tropical drink made with rum, pineapple juice, and coconut cream.",
     "history": "The origin of the Piña Colada is disputed by Puerto Rico and other Caribbean countries. The most accepted version is that the Piña Colada was created in Puerto Rico by bartender Ramón 'Monchito' Marrero Perez in 1954. He worked at the Caribe Hilton in San Juan and created the famous mix for the hotel's guests.",
-    "imageURL": "https://www.thecocktaildb.com/images/media/drink/upgsue1668419912.jpg"
+    "imageURL": "https:/www.thecocktaildb.com/images/media/drink/upgsue1668419912.jpg"
   }
 ]
