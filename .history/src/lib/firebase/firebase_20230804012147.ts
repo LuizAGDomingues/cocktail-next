@@ -16,9 +16,10 @@ const firebaseConfig = {
   projectId,
   storageBucket,
   messagingSenderId,
-  appId,
-  measurementId
+  appId: "1:489116524313:web:ca601e5b6014bf294f2f88",
+  measurementId: "G-QPKSYJNQ21"
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
