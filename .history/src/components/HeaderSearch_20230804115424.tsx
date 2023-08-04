@@ -25,9 +25,6 @@ function HeaderSearch({ drinkName }: HeaderSearchProps) {
   const handleIsUserLoged = () => {
     setUserLoged(true)
   }
-  const handleIsUserDisconnect = () => {
-    setUserLoged(false)
-  }
 
   return (
     <header className='flex items-center justify-between'>
@@ -41,7 +38,7 @@ function HeaderSearch({ drinkName }: HeaderSearchProps) {
         </div>
       : <InputSearch />
       }
-      {userLoged ? <UserDialog onUserDisconnect={handleIsUserDisconnect} /> : <LoginDialog onUserLoged={handleIsUserLoged} />}
+      {userLoged ? <UserDialog /> : <LoginDialog onUserLoged={handleIsUserLoged} />}
     </header>
   )
 }

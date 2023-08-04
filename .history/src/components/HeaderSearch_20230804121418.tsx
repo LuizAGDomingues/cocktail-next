@@ -41,7 +41,7 @@ function HeaderSearch({ drinkName }: HeaderSearchProps) {
         </div>
       : <InputSearch />
       }
-      {userLoged ? <UserDialog onUserDisconnect={handleIsUserDisconnect} /> : <LoginDialog onUserLoged={handleIsUserLoged} />}
+      {userLoged ? <UserDialog onUserDisconnect={handleIsUserLoged} /> : <LoginDialog onUserLoged={handleIsUserLoged} />}
     </header>
   )
 }

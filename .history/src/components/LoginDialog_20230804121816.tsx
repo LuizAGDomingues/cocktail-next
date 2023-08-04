@@ -36,8 +36,9 @@ function LoginDialog({onUserLoged}: LoginDialogProps) {
 
   const handleLogin_Create = async (event: FormEvent) => {
     event.preventDefault()
-    if(email.trim() === '' || password.trim() === '') {
+    if(email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
       setLoginError(true)
+      console.log('aqui')
     } else {
       if(signIn) {
         const connectLogin = await connectUser(email, password)
