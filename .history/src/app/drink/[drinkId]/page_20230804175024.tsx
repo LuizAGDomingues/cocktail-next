@@ -41,11 +41,8 @@ export default function Drink({ params }: { params: { drinkId: string } }) {
     if(hasFavorite) {
       const favorites = getCookie('favorites');
       const cookiesFavoriteData = JSON.parse(favorites!.toString())
-      const filter = cookiesFavoriteData.filter((favorite: favoriteDateProps) => favorite.drinkId === params.drinkId)
-      console.log(filter)
-      if(filter.length === 0){
-        setIsFavorite(false)
-      } else {
+      const filter = cookiesFavoriteData.filter((favorite: favoriteDateProps) => favorite.drinkId === drinkData?.idDrink)
+      if(filter){
         setIsFavorite(true)
       }
     }
@@ -61,11 +58,10 @@ export default function Drink({ params }: { params: { drinkId: string } }) {
       const favorites = getCookie('favorites');
       const cookiesFavoriteData = JSON.parse(favorites!.toString())
       const filter = cookiesFavoriteData.filter((favorite: favoriteDateProps) => favorite.drinkId === drinkData?.idDrink)
-      if(filter.length !== 0){
+      if(filter){
         setIsFavorite(false)
-        const newFavorite = cookiesFavoriteData.filter((favorite: favoriteDateProps) => favorite.drinkId !== drinkData?.idDrink)
-        const favoriteDrinkDataJSON = JSON.stringify(newFavorite)
-        setCookie('favorites', favoriteDrinkDataJSON)
+        const newFavorite = cookiesFavoriteData.filter((favorite: favoriteDateProps) => favorite.drinkId !== filter.idDrink)
+        
       } else {
         setIsFavorite(true)
         cookiesFavoriteData.push(favoriteDrinkData[0])

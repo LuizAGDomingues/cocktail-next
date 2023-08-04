@@ -7,12 +7,6 @@ import Image from "next/image";
 import { HeartStraight } from "@phosphor-icons/react";
 import { hasCookie, setCookie, getCookie } from 'cookies-next';
 
-interface favoriteDateProps {
-  strDrinkThumb: string, 
-  strDrink: string, 
-  drinkId: string
-}
-
 
 export default function Drink({ params }: { params: { drinkId: string } }) {
   const hasCookieName = hasCookie('loginToken')
@@ -37,41 +31,23 @@ export default function Drink({ params }: { params: { drinkId: string } }) {
   }, [])
 
   useEffect(() => {
-    const hasFavorite = hasCookie('favorites')
-    if(hasFavorite) {
-      const favorites = getCookie('favorites');
-      const cookiesFavoriteData = JSON.parse(favorites!.toString())
-      const filter = cookiesFavoriteData.filter((favorite: favoriteDateProps) => favorite.drinkId === params.drinkId)
-      console.log(filter)
-      if(filter.length === 0){
-        setIsFavorite(false)
-      } else {
-        setIsFavorite(true)
-      }
-    }
+    const favorites = getCookie('favorites');
+    const cookiesFavoriteData = JSON.parse(favorites!.toString())
+    const filter = cookiesFavoriteData.filter((favorite: any) => {})
   }, [])
 
   const handleFavorite = () => {
     const hasFavorite = hasCookie('favorites')
-    const favoriteDrinkData: favoriteDateProps[] = [{ strDrink: drinkData!.strDrink, strDrinkThumb: drinkData!.strDrinkThumb, drinkId: drinkData!.idDrink}]
+    const favoriteDrinkData: {strDrinkThumb: string, strDrink: string, drinkId: string}[] = [{ strDrink: drinkData!.strDrink, strDrinkThumb: drinkData!.strDrinkThumb, drinkId: drinkData!.idDrink}]
     const favoriteDrinkDataJSON = JSON.stringify(favoriteDrinkData)
     if(!hasFavorite){
       setCookie('favorites', favoriteDrinkDataJSON)
     } else {
       const favorites = getCookie('favorites');
       const cookiesFavoriteData = JSON.parse(favorites!.toString())
-      const filter = cookiesFavoriteData.filter((favorite: favoriteDateProps) => favorite.drinkId === drinkData?.idDrink)
-      if(filter.length !== 0){
-        setIsFavorite(false)
-        const newFavorite = cookiesFavoriteData.filter((favorite: favoriteDateProps) => favorite.drinkId !== drinkData?.idDrink)
-        const favoriteDrinkDataJSON = JSON.stringify(newFavorite)
-        setCookie('favorites', favoriteDrinkDataJSON)
-      } else {
-        setIsFavorite(true)
-        cookiesFavoriteData.push(favoriteDrinkData[0])
-        const favoriteDrinkDataJSON = JSON.stringify(cookiesFavoriteData)
-        setCookie('favorites', favoriteDrinkDataJSON)
-      }
+      cookiesFavoriteData.push(favoriteDrinkData[0])
+      const favoriteDrinkDataJSON = JSON.stringify(cookiesFavoriteData)
+      setCookie('favorites', favoriteDrinkDataJSON)
     }
   }
 

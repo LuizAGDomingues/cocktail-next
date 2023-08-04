@@ -41,8 +41,8 @@ export default function Drink({ params }: { params: { drinkId: string } }) {
     if(hasFavorite) {
       const favorites = getCookie('favorites');
       const cookiesFavoriteData = JSON.parse(favorites!.toString())
-      const filter = cookiesFavoriteData.filter((favorite: favoriteDateProps) => favorite.drinkId === params.drinkId)
-      console.log(filter)
+      const filter = cookiesFavoriteData.filter((favorite: favoriteDateProps) => favorite.drinkId === drinkData?.idDrink)
+      console.log(filter.length)
       if(filter.length === 0){
         setIsFavorite(false)
       } else {
