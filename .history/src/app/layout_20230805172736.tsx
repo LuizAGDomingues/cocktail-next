@@ -1,6 +1,6 @@
+import './globals.css'
 import type { Metadata } from 'next'
 import { Jacques_Francois } from 'next/font/google'
-import './globals.css'
 
 const jacques = Jacques_Francois({weight: '400', subsets: ['latin']})
 
