@@ -29,13 +29,13 @@ function UserDialog({onUserDisconnect}: UserDialogProps) {
   }
 
   return (
-    <div className="mr-16">
+    <div className="mr-8 md:mr-16">
       <DropdownMenu>
-        <DropdownMenuTrigger><UserCircle color='white' size={48} /></DropdownMenuTrigger>
+        <DropdownMenuTrigger><UserCircle color='white' className='w-10 h-10 md:w-12 md:h-12' /></DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem><button onClick={handleDisconnectUser} className='px-6 py-3 text-white bg-red-700 rounded-md font-sans text-lg'>Disconnect</button></DropdownMenuItem>
+          <DropdownMenuItem><button onClick={handleDisconnectUser} className='px-4 py-2 md:px-6 md:py-3 text-white bg-red-700 rounded-md font-sans md:text-lg'>Disconnect</button></DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
