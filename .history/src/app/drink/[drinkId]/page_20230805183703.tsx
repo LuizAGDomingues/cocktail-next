@@ -57,7 +57,7 @@ export default function Drink({ params }: { params: { drinkId: string } }) {
     const favoriteDrinkDataJSON = JSON.stringify(favoriteDrinkData)
     if(!hasFavorite){
       setCookie('favorites', favoriteDrinkDataJSON)
-      setIsFavorite(true)
+      
     } else {
       const favorites = getCookie('favorites');
       const cookiesFavoriteData = JSON.parse(favorites!.toString())

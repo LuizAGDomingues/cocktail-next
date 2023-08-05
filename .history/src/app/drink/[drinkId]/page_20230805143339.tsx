@@ -57,7 +57,6 @@ export default function Drink({ params }: { params: { drinkId: string } }) {
     const favoriteDrinkDataJSON = JSON.stringify(favoriteDrinkData)
     if(!hasFavorite){
       setCookie('favorites', favoriteDrinkDataJSON)
-      setIsFavorite(true)
     } else {
       const favorites = getCookie('favorites');
       const cookiesFavoriteData = JSON.parse(favorites!.toString())
@@ -92,7 +91,7 @@ export default function Drink({ params }: { params: { drinkId: string } }) {
           <div className="flex gap-4 lg:flex-col lg:gap-0">
             <div className="relative">
               <Image src={drinkData.strDrinkThumb} alt="Drink image" width={498} height={320} className="rounded-md" />
-              <button onClick={handleFavorite} disabled={!hasCookieName} className="absolute top-1 right-2 text-red-600 disabled:text-gray-600">
+              <button onClick={handleFavorite} disabled={!hasCookieName} className="absolute top-1 right-2 disabled:text-gray-600">
                 <HeartStraight size={32} weight={isFavorite ? "fill" : "regular"} />
               </button>
             </div>
