@@ -31,7 +31,7 @@ function HeaderSearch({ drinkName }: HeaderSearchProps) {
 
   return (
     <header className='flex items-start justify-between'>
-      <button onClick={() => window.history.back()} className='hidden md:block'>
+      <button href='/' className='hidden md:block'>
         <ArrowCircleLeft size={36} color='white' />
       </button>
       { drinkName 
